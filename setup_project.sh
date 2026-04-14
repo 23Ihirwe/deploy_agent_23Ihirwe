@@ -34,9 +34,9 @@ fi
 cleanup() {
     echo ""
     echo "Setup interrupted. Archiving current state..."
-    tar -czf "${project_dir}_archive.tar.gz" "$project_dir" 2>/dev/null
+    tar -czf "${project_dir}_archive" "$project_dir" 2>/dev/null
     rm -rf "$project_dir"
-    echo "Archive saved: ${project_dir}_archive.tar.gz"
+    echo "Archive saved: ${project_dir}_archive"
     echo "Incomplete directory removed."
     exit 1
 }
@@ -142,8 +142,8 @@ while true; do
                     break
                 fi
             done
-            sed -i "s/\"warning\": [0-9]*/\"warning\": $warn_val/" Helpers/config.json
-            sed -i "s/\"failure\": [0-9]*/\"failure\": $fail_val/" Helpers/config.json
+            sed -i -E "s/\"warning\"[[:space:]]*:[[:space:]]*[0-9]+/\"warning\": $warn_val/" Helpers/config.json
+            sed -i -E "s/\"failure\"[[:space:]]*:[[:space:]]*[0-9]+/\"failure\": $fail_val/" Helpers/config.json
             echo "Thresholds updated — Warning: ${warn_val}%  Failure: ${fail_val}%"
         else
             echo "No updates made to thresholds."
