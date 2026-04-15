@@ -98,7 +98,7 @@ Thresholds are stored in `Helpers/config.json` and read at runtime by `attendanc
 - If `sed` edits fail, verify `Helpers/config.json` is writable
 
 ## Video Walkthrough
-[Video Walkthrough](https://github.com/23Ihirwe)
+[Video Walkthrough]([https://github.com/23Ihirwe](https://drive.google.com/file/d/1in-Hz2V7tZqCQ7Q4Ox_UAS9nyvXarLD7/view?usp=drive_link))
 
 ## Author
 [Ihirwe Hildegardine](https://github.com/23Ihirwe)
